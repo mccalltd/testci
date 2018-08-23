@@ -2,9 +2,21 @@
 language: csharp
 mono: none
 dotnet: 2.1
+
+branches:
+  only:
+    - master
+
+# stages:
+#   - name: deploy
+#     if: branch = master
+
 install:
   - dotnet restore
+
 script:
   - dotnet build
-deploy:
-  - serverless deploy
+
+# deploy:
+#   skip_cleanup: true
+#   - serverless deploy
