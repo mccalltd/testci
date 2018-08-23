@@ -7,16 +7,12 @@ branches:
   only:
     - master
 
-# stages:
-#   - name: deploy
-#     if: branch = master
-
 install:
   - dotnet restore
 
 script:
   - dotnet build
 
-# deploy:
-#   skip_cleanup: true
-#   - serverless deploy
+deploy:
+  skip_cleanup: true
+  script: serverless deploy
